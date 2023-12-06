@@ -1,0 +1,86 @@
+/*lg detail */
+#detail .container {
+  .detail {
+    align-items: start;
+    .leftContainer, .rightContainer {
+      width: 50%;
+      
+    }
+
+    .leftContainer {
+      .mainPic {
+        width: 100%;
+        height: 500px;
+        object-position: 100% 0%;
+      }
+
+      .subPictures {
+        width: 100%;
+        flex-basis: 25%;
+        gap: 5px;
+        .imgs {
+          width: 24%;
+        }
+      }
+    }
+
+    .rightContainer {
+      .flex {
+        width: 100%;
+        justify-content: space-between;
+
+      }
+      .content {
+        .flex {
+          justify-content: start;
+          gap: 10px;
+        }
+
+
+      }
+      .input, .selectBox {
+        border-radius: 3px;
+        border: 1px solid gainsboro;
+      }
+      .input {
+        width: 80px;
+        height: 32px;
+        padding: 5px;
+      }
+      .selectBox {
+        width: 130px;
+        height: 32px;
+        text-align: center;
+        padding: 5px 10px;
+      }
+      .submitBtn {
+        display: block;
+      }
+    }
+  }
+}
+
+/*md detail */
+@media (max-width: 768px){
+  #detail .container {
+  .detail {
+    flex-direction: column;
+    padding: 0 20px;
+    .leftContainer, .rightContainer {
+      width: 100%;
+      
+    }
+
+    .leftContainer {
+      .mainPic {
+        height: 600px;
+      }
+    }
+
+  }
+}
+}
+/*md detail end */
+
+/*sm detail */
+/*sm detail end */

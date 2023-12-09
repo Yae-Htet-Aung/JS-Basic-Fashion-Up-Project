@@ -226,18 +226,30 @@ h6 {
 
 
   .container {
-    /* border: 2px solid green; */
+    padding: 0 20px;
     align-items: center;
     height: 80px;
 
     .brand>i {
       font-size: 23px;
     }
+
+
   }
 
-  .brandContainer .brand span {
-    padding: 0 10px;
+  .brandContainer {
+    .mobileSearchContainer {
+      display: none;
+    }
+
+    .toggler {
+      display: none;
+    }
   }
+
+  /* .brandContainer .brand span {
+    padding: 0 10px;
+  } */
 
   .items {
     display: flex;
@@ -374,7 +386,7 @@ h6 {
       flex-basis: 25%;
       border-radius: 5px;
       box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-      height: 450px;
+      height: 490px;
       overflow: hidden;
 
 
@@ -405,7 +417,6 @@ h6 {
           font-size: 28px;
           color: orangered;
           background-color: #e5e4e2;
-          /* border: 2px solid orangered; */
           outline: 2px solid orangered;
         }
       }
@@ -424,6 +435,7 @@ h6 {
       }
 
       .content {
+        padding: 20px 0;
         width: 100%;
         flex-direction: column;
         gap: 10px;
@@ -570,7 +582,7 @@ h6 {
       flex-basis: 24%;
       border-radius: 5px;
       box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-      height: 450px;
+      height: 490px;
 
       .action {
         padding: 0;
@@ -618,6 +630,7 @@ h6 {
 
       .content {
         width: 100%;
+        padding: 20px 0;
         flex-direction: column;
         gap: 10px;
         text-align: center;
@@ -798,13 +811,12 @@ h6 {
 
 /*md responsive */
 
-@media (max-width: 800px) {
+@media (max-width: 930px) {
 
   /*md nav section */
   #nav {
     background-color: rgba(0, 0, 0, 0.5);
     height: 80px;
-    overflow: hidden;
 
     .container {
       flex-direction: column;
@@ -820,14 +832,22 @@ h6 {
         align-items: center;
 
         .brand {
+          font-size: 14px;
           color: #e5e4e2;
           justify-content: start;
           flex-basis: 33%;
         }
 
         .mobileSearchContainer {
+          display: block;
           flex-basis: 33%;
           justify-content: flex-end;
+
+          .icons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+          }
 
           .icons>i {
             overflow: hidden;
@@ -840,11 +860,12 @@ h6 {
         }
 
         .toggler {
+          display: block;
           flex-basis: 33%;
           text-align: right;
 
-          >span {
-            padding: 5px 10px;
+          >i {
+            padding: 5px 7px;
             border-radius: 5px;
             background-color: #006187;
             color: #e5e4e2;
@@ -856,26 +877,45 @@ h6 {
       .searchContainer {
         display: none;
       }
-    }
 
-    .items {
-      flex-direction: column;
-    }
+      .items {
+        transition: all .3s ease-out;
+        opacity: 0.05;
+        height: 0;
+        margin-top: 20px;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        display: block;
+        border-radius: 10px;
+        overflow: hidden;
 
+        >li {
+          padding: 5px;
+          background-color: rgba(0, 0, 0, 0.8);
+          background-color: #dededec4;
 
-  }
+          >a {
+            color: black;
+          }
+        }
 
-  /*md arrival */
-  #arrivals .container {
-    .cards {
-      flex-wrap: wrap;
-      padding: 0 20px;
-
-      .card {
-        position: relative;
-        flex-basis: 49%;
+        >li {
+          >a:hover {
+            color: rgb(255, 38, 0);
+          }
+        }
       }
+
+      .items.toggle {
+        opacity: 1;
+        height: 157px;
+      }
+
     }
+
+
+
   }
 
   /*md slider */
@@ -893,6 +933,21 @@ h6 {
     }
   }
 
+  /*md arrival */
+  #arrivals .container {
+    padding: 0;
+    .cards {
+      flex-wrap: wrap;
+      padding: 0 20px;
+      gap: 20px;
+
+      .card {
+        position: relative;
+        flex-basis: 48%;
+      }
+    }
+  }
+
   /*md collection */
   #collection .container {
     .cards {
@@ -903,12 +958,29 @@ h6 {
   /*md products */
   #product .container {
     .cards {
+      flex-wrap: wrap;
       gap: 20px;
     }
 
     .cards .card {
       flex-basis: 48%;
-      /*! todo */
+    }
+  }
+
+  /*md blog */
+  #blog .container {
+    .cards {
+      gap: 10px;
+      flex-direction: column;
+
+      .card {
+        overflow: hidden;
+        border-radius: 5px;
+
+        .content {
+          padding: 10px 20px;
+        }
+      }
     }
   }
 
@@ -967,14 +1039,115 @@ h6 {
   }
 }
 
+
+/*sm responsive */
 @media (max-width: 560px) {
+
+  /*sm nav section */
+  #nav {
+
+    .container {
+
+      .brandContainer {
+        padding: 0;
+
+        .brand {
+          font-size: 11px;
+          justify-content: end;
+
+          >i {
+            font-size: 18px;
+          }
+        }
+
+        .mobileSearchContainer {
+          .icons {
+            gap: 8px;
+          }
+
+          .icons>i {
+            font-size: 16px;
+          }
+        }
+
+        .toggler {
+          flex-basis: 10%;
+        }
+      }
+    }
+  }
+
+  /*sm slider */
+  #slider {
+    .sliderContainer {
+      width: 100%;
+      height: auto;
+      position: relative;
+      padding-bottom: 0;
+
+      .coverPicture {
+        object-fit: contain;
+      }
+
+      .prevBtn,
+      .nextBtn {
+        top: 40%;
+      }
+    }
+  }
+
+  /*sm arrival */
+  #arrivals .container {
+    .cards {
+      flex-wrap: wrap;
+      gap: 20px;
+
+      .card {
+        flex-basis: 100%;
+      }
+    }
+  }
+
+  /*sm collection */
+  #collection .container {
+    .cards {
+      height: fit-content;
+      flex-direction: column-reverse;
+    }
+
+    .cards .left {
+      width: 100%;
+    }
+
+    .cards .right {
+      width: 100%;
+
+      .btm {
+        height: 280px;
+      }
+    }
+  }
 
   /*smd products */
   #product .container .cards {
-    gap: 10px;
+    gap: 20px;
 
     .card {
-      flex-basis: 48%;
+      flex-basis: 100%;
     }
   }
+
+  /*sm blog */
+  #blog .container {
+    .cards {
+      gap: 25px;
+
+      .card .picContainer {
+        .pic {
+          object-position: 35% 0%;
+        }
+      }
+    }
+  }
+
 }

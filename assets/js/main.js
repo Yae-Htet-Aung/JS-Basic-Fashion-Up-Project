@@ -22,15 +22,30 @@ searchBox.onblur = () => {
   searchBox.classList.remove('active')
 }
 
-// let toggler = document.getElementById('toggler')
-// let ul = document.getElementById('list')
 
-// toggler.onclick = () => {
-//   // console.log('first')
-//   ul.classList.toggle('active')
-//   // console.log(ul.classList)
+// ? toggler
+let toggler = document.getElementById('toggler')
+// console.log(toggler)
+let items = document.getElementById('items')
+// console.log(items.classList)
 
-//   toggler.innerHTML == '<i class="fa-solid fa-bars"></i>'
-//     ? (toggler.innerHTML = '<i class="fa-solid fa-xmark"></i>')
-//     : (toggler.innerHTML = '<i class="fa-solid fa-bars"></i>')
-// }
+
+toggler.onclick = () => {
+  // console.log('clicked **')
+  items.classList.toggle('toggle')
+  // console.log(toggler.innerHTML)
+
+  
+  if( toggler.innerHTML == '<i id="icon" class="fa-solid fa-bars"></i>'){
+    console.log('if loop')
+   
+    toggler.innerHTML = '<i class="fa-solid fa-xmark"></i>'
+    
+  }else {
+    console.log('else loop')
+    toggler.innerHTML = '<i id="icon" class="fa-solid fa-bars"></i>'
+  }
+
+}
+// ? toggler end
+

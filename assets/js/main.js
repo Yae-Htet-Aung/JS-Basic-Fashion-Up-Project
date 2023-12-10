@@ -1,25 +1,27 @@
-// nav section
-let nav = document.getElementById('nav').classList
+// ? nav section
+let nav = document.getElementById('nav')
 
 window.onscroll = () => {
   // console.log(scrollY)
   if(scrollY > 30){
-    nav.add('active')
+    nav.classList.add('active')
   } else {
-    nav.remove('active')
+    nav.classList.remove('active')
   }
 }
 
 let searchBox = document.getElementById('search-box')
-let icons = document.getElementById('icons')
+let lgIcons = document.getElementById('lgIcons')
 
 searchBox.onfocus = () => {
-  icons.classList.add('deactivate')
+
+  // eg[0].classList.add('hide');  
   searchBox.classList.add('active')
+  lgIcons.classList.add('hide')
 }
 searchBox.onblur = () => {
-  icons.classList.remove('deactivate')
   searchBox.classList.remove('active')
+  lgIcons.classList.remove('hide')
 }
 
 
@@ -33,6 +35,7 @@ let items = document.getElementById('items')
 toggler.onclick = () => {
   // console.log('clicked **')
   items.classList.toggle('toggle')
+  nav.classList.add('showNav')
   // console.log(toggler.innerHTML)
 
   
@@ -49,3 +52,28 @@ toggler.onclick = () => {
 }
 // ? toggler end
 
+// ? slider
+let prevBtn = document.getElementById('prevBtn')
+let nextBtn = document.getElementById('nextBtn')
+let slider = document.getElementsByClassName('coverPicture')
+let num = 1
+
+nextBtn.onclick = function () {
+  document.getElementById(`sliderPic${num}`).classList.remove('active')
+  num++
+  if(num >slider.length){
+    num = 1
+  }
+  document.getElementById(`sliderPic${num}`).classList.add('active')
+}
+
+prevBtn.onclick = function prevClicked() {
+  document.getElementById(`sliderPic${num}`).classList.remove('active')
+  num--
+  console.log(num)
+  if(num==0){
+    num=slider.length
+  }
+  document.getElementById('sliderPic'+num).classList.add('active')
+  
+}

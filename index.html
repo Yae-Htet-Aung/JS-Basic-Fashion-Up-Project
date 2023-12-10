@@ -18,9 +18,10 @@
     <nav id="nav" class="">
       <div class="container flex ">
         <div class="brandContainer ">
+
           <div class="brand flex ">
-            <i class="fa-regular fa-paper-plane plane"></i>
-            <h2 class="p l1 inline-block">Fashion Up</h2>
+            <a href="#"><i class="fa-regular fa-paper-plane plane"></i></a>
+            <h2 class="p l1 inline-block"><a href="#">Fashion Up</a></h2>
           </div>
 
           <div class="mobileSearchContainer flex ">
@@ -48,22 +49,26 @@
             <i class="fa-solid fa-magnifying-glass"></i>
           </div>
 
-          <div id="icons" class="icons p l1 ">
+          <div id="lgIcons" class="icons">
             <i class="fa-solid fa-user"></i>
             <i class="fa-solid fa-heart"></i>
             <i class="fa-solid fa-bag-shopping"></i>
           </div>
         </div>
 
+         <!-- <div class="eg" style="width:100px;height:100px;background-color: red;"></div> -->
+
       </div>
     </nav>
 
     <!-- Slider Section -->
     <section id="slider">
-      <div class="sliderContainer p b3">
-        <button class="prevBtn"><i class="fa-solid fa-chevron-left"></i>Prev</button>
-        <button class="nextBtn">Next<i class="fa-solid fa-chevron-right"></i></button>
-        <img class="coverPicture" src="assets/public/cover1.png" alt="loading..">
+      <div class="sliderContainer p b3 ">
+        <button id="prevBtn" class="prevBtn"><i class="fa-solid fa-chevron-left"></i>Prev</button>
+        <button id="nextBtn" class="nextBtn">Next<i class="fa-solid fa-chevron-right"></i></button>
+        <img id="sliderPic1" class="coverPicture active" src="assets/public/cover1.png" alt="loading..">
+        <img id="sliderPic2" class="coverPicture " src="assets/public/cover2.png" alt="loading..">
+        <img id="sliderPic3" class="coverPicture " src="assets/public/cover3.jpg" alt="loading..">
       </div>
     </section>
 
